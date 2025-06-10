@@ -417,8 +417,8 @@
 .then(data => {
     console.log('Resposta da API:', data);
 
-   if (data?.status === 200 && data?.data) {
-    const resultado = data.data;
+if (data?.nome) {
+    const resultado = data;
 
 
                             cpfStatus.innerHTML = '<span class="success-message"><i class="fas fa-check-circle"></i> CPF verificado com sucesso</span>';
