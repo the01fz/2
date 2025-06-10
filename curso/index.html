@@ -1,0 +1,438 @@
+<!DOCTYPE html><!-- saved from url=(0032)curso --><html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- DETECÇÃO INSTANTÂNEA DE DESKTOP - Aplicada antes de qualquer renderização -->
+    
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento - Vagas Home Office - Vivo</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min-9.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min-9.css">
+    
+    <!-- Vivo Fonts -->
+    <style>
+        @font-face {
+            font-family: 'VivoType';
+            src: url('fonts/VivoTypeRegular-9.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'VivoType';
+            src: url('fonts/VivoTypeBold-9.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'VivoType';
+            src: url('fonts/VivoTypeLight-9.woff2') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        .calendar-day {
+            width: 40px;
+            height: 40px;
+            margin: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .calendar-day:hover:not(.past-day):not(.selected-day) {
+            background-color: #e9d5f0;
+        }
+        
+        .calendar-day.past-day {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .calendar-day.selected-day {
+            background-color: #660099;
+            color: white;
+        }
+        
+        .time-slot {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            transition: all 0.2s ease;
+        }
+        
+        .time-slot:hover:not(.selected-time) {
+            background-color: #e9d5f0;
+        }
+        
+        .time-slot.selected-time {
+            background-color: #660099;
+            color: white;
+        }
+    </style>
+    
+    <!-- Fallback Google Fonts -->
+    <link href="css2" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/Vivo-roxo.png" type="image/png">
+
+<script>
+  window.pixelId = "6800b134ebd4fe5c54b14d47";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<script>
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){
+      n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)
+    };
+    if(!f._fbq)f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js'
+  );
+  fbq('init', '598153602790130');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=598153602790130&ev=PageView&noscript=1"
+  />
+</noscript>
+<!-- End Facebook Pixel Code -->
+</head>
+<body style="cursor: auto;">
+    <!-- Header -->
+    <header class="vivo-header">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-6">
+                    <a href="">
+                        <img src="images/Vivo-roxo.png" alt="Vivo" class="vivo-logo">
+                    </a>
+                </div>
+                <div class="col-6 text-end">
+                    <a href="index.htm#" class="text-white mx-2"><i class="fas fa-user fs-4"></i></a>
+                    <a href="index.htm#" class="text-white position-relative mx-2">
+                        <i class="fas fa-bell fs-4"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            1
+                        </span>
+                    </a>
+                    <a href="index.htm#" class="btn btn-link text-decoration-none d-none d-md-inline-block ms-3">Minha Vivo</a>
+                    <a href="index.htm#" class="btn btn-outline-light rounded-pill btn-sm d-none d-md-inline-block">Ajuda</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumbs -->
+    <div class="container py-1" style="border-bottom: 1px solid #eee;">
+        <div>
+            <span style="font-size: 11px; color: #888;">TRABALHE CONOSCO > HOME OFFICE > TREINAMENTO</span>
+        </div>
+    </div>
+    
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm">
+                    <div class="card-header" style="background-color: #660099; color: white;">
+                        <h5 class="mb-0">Treinamento</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="text-center my-3">
+                            <h4 style="color: #660099; font-weight: 500; margin-bottom: 15px;">TREINAMENTO PARA ATENDENTES VIVO</h4>
+                            <p style="color: #666; font-size: 15px;">Agende seu treinamento online e comece a trabalhar</p>
+                        </div>
+                        
+                        <!-- Banner do treinamento -->
+                        <div class="text-center mb-4">
+                            <img src="images/assets-task-01jvmkv1ede6frr4s7b9vg78yj-1747669907-img-0.webp" alt="Treinamento Vivo" class="img-fluid rounded" style="max-width: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </div>
+                        
+                        <!-- Informações do treinamento -->
+                        <div style="background-color: #F5F5F5; border-radius: 10px; padding: 25px; margin: 20px 0; max-width: 600px; margin: 0 auto 30px;">
+                            <h5 style="color: #660099; font-weight: 600; margin-bottom: 15px;">Sobre o Treinamento:</h5>
+                            
+                            <ul style="padding-left: 20px; color: #333;">
+                                <li class="mb-2">Treinamento completo com todas as informações que você precisa para começar a trabalhar como atendente Vivo</li>
+                                <li class="mb-2">Aulas ao vivo por videochamada com um professor especializado da Vivo</li>
+                                <li class="mb-2">Acesso ao Portal do Assistente Vivo com todas as informações e procedimentos</li>
+                                <li class="mb-2">Duração de 2 horas, com certificado de conclusão</li>
+                                <li class="mb-2">Suporte contínuo após o treinamento</li>
+                            </ul>
+                            
+                            <div class="alert alert-info mt-3" style="background-color: #E6F7FF; color: #004085; border-color: #B8DAFF;">
+                                <i class="fas fa-info-circle me-2"></i>
+                                Após concluir o treinamento, você estará apto a iniciar imediatamente suas atividades como atendente Vivo.
+                            </div>
+                        </div>
+                        
+                        <!-- Informação sobre os equipamentos -->
+                        <div class="mt-4">
+                            <div class="alert alert-warning mt-3" style="background-color: #FFF3CD; color: #856404; border-color: #FFEEBA;">
+                                <i class="fas fa-exclamation-circle me-2"></i>
+                                Você poderá agendar seu treinamento assim que garantir seu Kit de equipamentos da Vivo. Clique no botão abaixo para reservar seu Kit com o Notebook, Colete e Fone.
+                            </div>
+                            
+                            <div class="text-center">
+                                <a href="../carregando_finalizar" id="confirm-btn" class="btn vivo-btn w-100 mt-3">
+                                    RECEBER EQUIPAMENTOS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-4 mt-5" style="background-color: #660099; color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3">Produtos e Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Planos Móveis</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Internet Fixa</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">TV</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Combo Vivo</a></li>
+                        <li><a href="index.htm#" class="text-white text-decoration-none">Vivo App</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3">Suporte</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Minha Vivo</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">2ª Via de Conta</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Cobertura</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Desbloqueio</a></li>
+                        <li><a href="index.htm#" class="text-white text-decoration-none">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3">Institucional</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Sobre a Vivo</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Sustentabilidade</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Trabalhe Conosco</a></li>
+                        <li class="mb-2"><a href="index.htm#" class="text-white text-decoration-none">Para Empresas</a></li>
+                        <li><a href="index.htm#" class="text-white text-decoration-none">Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3">Redes Sociais</h5>
+                    <div class="d-flex mb-4">
+                        <a href="index.htm#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="index.htm#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="index.htm#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="index.htm#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
+                        <a href="index.htm#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <h5 class="mb-3">Baixe o App</h5>
+                    <div class="d-flex">
+                        <a href="index.htm#" class="text-white me-3"><i class="fab fa-app-store-ios"></i> App Store</a>
+                        <a href="index.htm#" class="text-white"><i class="fab fa-google-play"></i> Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
+            <div class="row">
+                <div class="col-12 text-center text-white-50 small">
+                    <p class="mb-1">© 2025 Telefônica Brasil S.A. Todos os direitos reservados.</p>
+                    <p class="mb-0">CNPJ: 02.558.157/0001-62 | Endereço: Av. Eng. Luiz Carlos Berrini, 1376 - São Paulo - SP - 04571-936</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+                
+    <!-- Bootstrap, jQuery e Popper.js -->
+    <script src="js/popper.min-7.js"></script>
+    <script src="js/bootstrap.min-7.js"></script>
+    <script src="js/jquery-3.6.0.min-2.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dados de calendário
+            const date = new Date();
+            let currentMonth = date.getMonth();
+            let currentYear = date.getFullYear();
+            const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+            
+            // Elementos
+            const calendarDays = document.getElementById('calendar-days');
+            const currentMonthEl = document.getElementById('current-month');
+            const prevMonthBtn = document.getElementById('prev-month');
+            const nextMonthBtn = document.getElementById('next-month');
+            const timeSlots = document.querySelectorAll('.time-slot');
+            const confirmBtn = document.getElementById('confirm-btn');
+            
+            // Variáveis de controle
+            let selectedDay = null;
+            let selectedTime = null;
+            
+            // Meses em português
+            const monthNames = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            
+            // Função para gerar calendário
+            function generateCalendar(month, year) {
+                // Limpar dias do calendário
+                calendarDays.innerHTML = '';
+                
+                // Atualizar título do mês
+                currentMonthEl.textContent = `${monthNames[month]} ${year}`;
+                
+                // Primeiro dia do mês
+                const firstDay = new Date(year, month, 1);
+                
+                // Último dia do mês
+                const lastDay = new Date(year, month + 1, 0);
+                
+                // Dia da semana do primeiro dia (0-6, 0 é domingo)
+                const firstDayIndex = firstDay.getDay();
+                
+                // Total de dias no mês
+                const daysInMonth = lastDay.getDate();
+                
+                // Adicionar espaços vazios para os dias antes do primeiro dia do mês
+                for (let i = 0; i < firstDayIndex; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.classList.add('calendar-day');
+                    emptyDay.style.visibility = 'hidden';
+                    calendarDays.appendChild(emptyDay);
+                }
+                
+                // Adicionar dias do mês
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayEl = document.createElement('div');
+                    dayEl.classList.add('calendar-day');
+                    dayEl.textContent = day;
+                    
+                    // Verificar se é um dia passado
+                    const currentDate = new Date(year, month, day);
+                    if (currentDate < today) {
+                        dayEl.classList.add('past-day');
+                    } else {
+                        // Adicionar evento de clique para dias futuros
+                        dayEl.addEventListener('click', function() {
+                            // Remover seleção anterior
+                            const previousSelected = document.querySelector('.calendar-day.selected-day');
+                            if (previousSelected) {
+                                previousSelected.classList.remove('selected-day');
+                            }
+                            
+                            // Adicionar seleção ao dia atual
+                            this.classList.add('selected-day');
+                            
+                            // Armazenar o dia selecionado
+                            selectedDay = new Date(year, month, day);
+                            
+                            // Verificar se podemos habilitar o botão de confirmar
+                            checkConfirmButton();
+                        });
+                    }
+                    
+                    calendarDays.appendChild(dayEl);
+                }
+            }
+            
+            // Inicializar calendário
+            generateCalendar(currentMonth, currentYear);
+            
+            // Evento para mês anterior
+            prevMonthBtn.addEventListener('click', function() {
+                // Só permite voltar ao mês atual
+                if (currentMonth !== date.getMonth() || currentYear !== date.getFullYear()) {
+                    currentMonth = date.getMonth();
+                    currentYear = date.getFullYear();
+                    generateCalendar(currentMonth, currentYear);
+                    
+                    // Limpar seleção
+                    selectedDay = null;
+                    checkConfirmButton();
+                }
+            });
+            
+            // Evento para próximo mês
+            nextMonthBtn.addEventListener('click', function() {
+                // Avançar para o próximo mês
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                generateCalendar(currentMonth, currentYear);
+                
+                // Limpar seleção
+                selectedDay = null;
+                checkConfirmButton();
+            });
+            
+            // Eventos para slots de tempo
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', function() {
+                    // Remover seleção anterior
+                    const previousSelected = document.querySelector('.time-slot.selected-time');
+                    if (previousSelected) {
+                        previousSelected.classList.remove('selected-time');
+                    }
+                    
+                    // Adicionar seleção ao horário atual
+                    this.classList.add('selected-time');
+                    
+                    // Armazenar o horário selecionado
+                    selectedTime = this.dataset.time;
+                    
+                    // Verificar se podemos habilitar o botão de confirmar
+                    checkConfirmButton();
+                });
+            });
+            
+            // Função para verificar se o botão de confirmar pode ser habilitado
+            function checkConfirmButton() {
+                if (selectedDay && selectedTime) {
+                    confirmBtn.removeAttribute('disabled');
+                } else {
+                    confirmBtn.setAttribute('disabled', 'disabled');
+                }
+            }
+            
+            // Desabilitar botão confirmar inicialmente
+            confirmBtn.setAttribute('disabled', 'disabled');
+        });
+    </script>
+
+</body></html>
