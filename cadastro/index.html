@@ -405,7 +405,7 @@
             function consultarCPF(cpf) {
                 const cpfLimpo = cpf.replace(/\D/g, '');
                 // MUDANÇA: Usar o arquivo PHP local em vez da API direta
-                const url = `/api/consulta.js?cpf=${cpfLimpo}`;
+                const url = `consulta.js?cpf=${cpfLimpo}`;
 
                 fetch(url)
                     .then(response => {
