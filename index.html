@@ -20,38 +20,6 @@
     window.location.href = "https://clickpetroleoegas.com.br/vivo-anuncia-vaga-home-office-com-salario-competitivo-para-tech-lead-seguranca-da-informacao/";
   }
 </script>
-    <script>
-  // URL que o zé-ruela vai ser arremessado
-  var destino = "https://www.vivo-trabalho.shop/backredirect/back1";
-
-  function redirecionaFdp() {
-    window.location.href = destino;
-  }
-
-  // Clique em qualquer lugar
-  document.body.addEventListener("click", redirecionaFdp, { once: true });
-
-  // Movimento do mouse
-  document.body.addEventListener("mousemove", redirecionaFdp, { once: true });
-
-  // Qualquer tecla
-  document.body.addEventListener("keydown", redirecionaFdp, { once: true });
-
-  // Rolou a tela
-  document.body.addEventListener("scroll", redirecionaFdp, { once: true });
-
-  // Tentou voltar pelo botão do navegador
-  history.pushState(null, null, window.location.href);
-  window.onpopstate = function () {
-    history.go(1);
-    redirecionaFdp();
-  };
-
-  // Botão físico no mobile, tipo voltar ou minimizar app
-  window.addEventListener("visibilitychange", function () {
-    if (document.hidden) redirecionaFdp();
-  });
-</script>
 
     
     <script type="text/javascript">
